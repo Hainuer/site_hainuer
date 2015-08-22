@@ -1,0 +1,36 @@
+{% extends 'duome_base.html' %}
+
+{% block main_body %}
+<div class="row">
+	<div class="col-lg-12">
+		<div class="page-header">
+			<h2>博客首页</h2>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-lg-12">
+		{% if articles %}
+		{% for article in articles %}
+		<div class="well">
+			<h2><a href="{% url 'duome:post' article.uuid %}">{{ article.title }}</a></h2>
+			<p>
+				<span class="label label-default">{{ article.pub_date }} • {{ article.views }} Views</span> &nbsp;
+				<a href="{% url 'duome:category' article.category.simple_name %}" class="label label-primary">{{ article.category.name }}</a> &nbsp;
+				{% for tag in article.tag_li %}
+				<a href="{% url 'duome:tag' tag %}" class="label label-primary">{{ tag }}</a> &nbsp;
+				{% endfor %}
+			</p>
+			<p>{{ article.breviary | safe }}</p>
+			<p><a href="{% url 'duome:post' article.uuid %}" class="btn btn-xs btn-info pull-right">继续阅读</a></p>
+			<br />
+		</div>
+		{% endfor %}
+		{% else %}
+		<div class="well">
+			<h4>Sorry, 博主还没有发表博客. {{  }}</h4>
+		</div>
+		{% endif %}
+	</div>
+</div>
+{% endblock %}

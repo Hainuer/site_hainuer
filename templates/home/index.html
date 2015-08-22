@@ -1,0 +1,46 @@
+<!DOCTYPE html>{% load staticfiles %}
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Summer Afternoon, Forget Walking. 夏日午后, 忘记行走.">
+	<meta name="author"      content="LF.Phoenix Pham">
+	
+	<title>主页 - 夏日午后·忘记行走</title>
+
+	<link rel="shortcut icon" href="{% static "home/images/favicon.png" %}">
+	
+	<!-- Bootstrap itself -->
+	<link href="{% static "home/css/bootstrap.min.css" %}" rel="stylesheet" type="text/css">
+
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="{% static "home/css/style.css" %}">
+
+	<!-- Fonts -->
+	<link href="{% static "home/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+	<link href='http://fonts.useso.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
+</head>
+
+<body class="theme-invert">
+	<section class="section" id="head">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">	
+					<h1 class="title">Phoenix Pham</h1>
+					<h2 class="subtitle">Summer Afternoon, Forget Walking.</h2>
+					<h2 class="subtitle">夏日午后, 忘记行走.</h2>
+					<p>
+						<a href="{% url 'duome:index' %}" class="btn btn-info">Blog博客</a>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="{% url 'zhaokao:index' %}" class="btn btn-warning">招考资讯</a>
+					</p>	
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<script src="{% static "home/scripts/jquery.min.js" %}"></script>
+	<script src="{% static "home/scripts/bootstrap.min.js" %}"></script>
+	<script src="{% static "home/scripts/modernizr.js" %}"></script>
+</body>
+</html>
